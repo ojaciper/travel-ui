@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_ui/screens/home_screen.dart';
+import 'package:travel_ui/screens/page_view.dart';
 import 'package:travel_ui/widget/custom_button.dart';
 
 class OnboardScreen extends StatelessWidget {
@@ -60,7 +61,8 @@ class OnboardScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomeScreen()),
+                          builder: (context) => const PageTab(),
+                        ),
                       );
                     },
                   )
