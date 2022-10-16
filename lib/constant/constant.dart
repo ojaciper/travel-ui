@@ -9,6 +9,9 @@ List<String> category = [
   'Sliding'
 ];
 
-List<Widget> page = [
+List<Widget> pages = [
   const HomeScreen(),
+  const SizedBox(),
+  const SizedBox(),
+  const SizedBox(),
 ];

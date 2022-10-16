@@ -10,19 +10,16 @@ class PageTab extends StatefulWidget {
 
 class _PageTabState extends State<PageTab> {
   int selectedPage = 0;
-  changePage(int page) {
+  void changePage(int page) {
     setState(() {
       selectedPage = page;
-      print(selectedPage);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        children: page,
-      ),
+      body: pages[selectedPage],
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(15),
@@ -32,6 +29,7 @@ class _PageTabState extends State<PageTab> {
           height: 70,
           child: BottomNavigationBar(
               onTap: changePage,
+              currentIndex: selectedPage,
               type: BottomNavigationBarType.fixed,
               elevation: 9,
               iconSize: 26,
