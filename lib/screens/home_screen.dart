@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_ui/constant/constant.dart';
 import 'package:travel_ui/data/data.dart';
+import 'package:travel_ui/screens/details.dart';
 import 'package:travel_ui/widget/place_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -251,7 +252,17 @@ class _HomeScreenState extends State<HomeScreen> {
               shrinkWrap: true,
               itemCount: data.length,
               itemBuilder: (context, index) {
-                return PlaceCard(index: data[index]);
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(index: data[index]),
+                      ),
+                    );
+                  },
+                  child: PlaceCard(index: data[index]),
+                );
               },
             ),
             const SizedBox(height: 20)
