@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:travel_ui/model/place.dart';
 
 class DetailsScreen extends StatelessWidget {
-  Place index;
-  DetailsScreen({required this.index, super.key});
+  final Place index;
+  const DetailsScreen({required this.index, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +13,7 @@ class DetailsScreen extends StatelessWidget {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25)
@@ -20,19 +21,24 @@ class DetailsScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15,
-                        horizontal: 15,
-                      ),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFEFF4FF),
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: const Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.black,
+                    InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 15,
+                          horizontal: 15,
+                        ),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFEFF4FF),
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: const Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                     const Text(
@@ -65,6 +71,8 @@ class DetailsScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 25)
                     .copyWith(top: 30),
                 child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(15),
