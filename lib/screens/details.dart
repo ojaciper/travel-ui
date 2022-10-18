@@ -21,7 +21,7 @@ class DetailsScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    InkWell(
+                    GestureDetector(
                       onTap: () {
                         Navigator.pop(context);
                       },
